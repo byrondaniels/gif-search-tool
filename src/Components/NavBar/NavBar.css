@@ -1,0 +1,18 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  background: lightsteelblue;
+  font-size: 200%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 50px;
+}
+.nav-child {
+  margin: 2px;
+  text-decoration: none;
+}
+.nav-child:hover {
+  color: rgb(102, 102, 189);
+}

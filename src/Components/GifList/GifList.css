@@ -1,0 +1,43 @@
+.gif-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.gif-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(102, 102, 189);
+  min-width: 30vw;
+  max-width: 30vw;
+  text-align: center;
+  margin: 5px;
+}
+.gif-card-top {
+  margin: 0 auto;
+}
+
+.gif-card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 5px;
+}
+
+.gif-card-save {
+  background: lightsteelblue;
+  margin: 0 auto;
+  margin-top: 3px;
+  border-radius: 5px;
+  padding: 0px 3px;
+}
+.gif-card-save:hover {
+  color: rgb(102, 102, 189);
+  box-shadow: 0 0 10px 1px lightblue;
+  cursor: pointer;
+}
+img {
+  margin: 0 auto;
+}

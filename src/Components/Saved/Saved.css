@@ -1,0 +1,42 @@
+.save {
+  background: lightsteelblue;
+  min-height: 100vh;
+  margin: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.saved-padding-bar {
+  height: 160px;
+}
+
+.clear-save-bar {
+  background: rgb(102, 102, 189);
+  color: white;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5px;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  border: black solid;
+}
+.clear-btn:hover {
+  background: rgb(194, 137, 137);
+  cursor: pointer;
+}
+
+.clear-btn {
+  background: lightsteelblue;
+  color: gray;
+  font-size: 200%;
+  display: inline-block;
+  padding: 0px !important;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
