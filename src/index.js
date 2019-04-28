@@ -7,10 +7,14 @@ import { createLogger } from "redux-logger";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { requestGifs, searchGifs, saveGifs } from "./reducers";
+import { requestGifs, searchGifs, savedGifList } from "./reducers";
 
 const logger = createLogger();
-const rootReducers = combineReducers({ requestGifs, searchGifs, saveGifs });
+const rootReducers = combineReducers({
+  requestGifs,
+  searchGifs,
+  savedGifList
+});
 const store = createStore(
   rootReducers,
   applyMiddleware(thunkMiddleware, logger)

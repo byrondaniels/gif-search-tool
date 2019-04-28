@@ -19,8 +19,6 @@
 }
 
 .search-btn {
-  background: lightsteelblue;
-  color: gray;
   font-size: 200%;
   display: inline-block;
   padding: 0px !important;
@@ -29,10 +27,14 @@
   text-align: center;
   margin-left: 10px;
   margin-top: 20px;
+}
+.btn {
+  background: lightsteelblue;
+  color: rgb(102, 102, 189);
   border-radius: 5px;
 }
-.search-btn:hover {
-  color: rgb(102, 102, 189);
+
+.btn:hover {
   cursor: pointer;
   box-shadow: 0 0 10px 1px lightblue;
 }

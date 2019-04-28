@@ -1,7 +1,9 @@
 import { apiCall } from "./api/api";
 import {
   SEARCHFIELD_ITEM,
-  SAVED_GIFS,
+  SAVE_GIF,
+  DELETE_GIF,
+  DELETE_ALL_GIF,
   REQUEST_GIFS_PENDING,
   REQUEST_GIFS_SUCCESS,
   REQUEST_GIFS_FAILED
@@ -12,8 +14,16 @@ export const setSearchField = text => ({
   payload: text
 });
 
-export const saveGifs = data => ({
-  type: SAVED_GIFS,
+export const saveGif = data => ({
+  type: SAVE_GIF,
+  payload: data
+});
+export const deleteGif = data => ({
+  type: DELETE_GIF,
+  payload: data
+});
+export const deleteAllGif = data => ({
+  type: DELETE_ALL_GIF,
   payload: data
 });
 

@@ -1,5 +1,8 @@
-.save {
+.blue {
   background: lightsteelblue;
+}
+
+.save {
   min-height: 100vh;
   margin: auto;
   overflow-y: scroll;
@@ -23,13 +26,10 @@
   border: black solid;
 }
 .clear-btn:hover {
-  background: rgb(194, 137, 137);
-  cursor: pointer;
+  background: rgb(194, 137, 137) !important;
 }
 
 .clear-btn {
-  background: lightsteelblue;
-  color: gray;
   font-size: 200%;
   display: inline-block;
   padding: 0px !important;

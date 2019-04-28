@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Search from "./Components/Search/Search";
 import Saved from "./Components/Saved/Saved";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {

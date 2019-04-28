@@ -5,7 +5,7 @@ const GifCard = ({ title, embed, data, gifItemClick, actionText }) => (
     <div className="gif-card-bottom">
       <img alt="not found" src={embed} />
 
-      <h1 className="gif-card-save" onClick={() => gifItemClick(data)}>
+      <h1 className="gif-card-save btn" onClick={() => gifItemClick(data)}>
         {actionText}
       </h1>
     </div>

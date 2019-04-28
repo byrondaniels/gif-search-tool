@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import GifList from "../GifList/GifList.js";
 import { connect } from "react-redux";
-import { setSearchField, requestGifs, saveGifs } from "../../actions";
+import { setSearchField, requestGifs, saveGif } from "../../actions";
 import "./Search.css";
 
 const mapStateToProps = state => {
   return {
     searchField: state.searchGifs.searchField,
     gifs: state.requestGifs.gifs,
-    savedGifs: state.saveGifs.savedGifs,
+    savedGifs: state.savedGifList.savedGifs,
     isPending: state.requestGifs.isPending
   };
 };
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
     onRequestGifs: searchVar => dispatch(requestGifs(searchVar)),
-    onSaveGifs: newSavedGifs => dispatch(saveGifs(newSavedGifs))
+    onSaveGifs: newGif => dispatch(saveGif(newGif))
   };
 };
 
@@ -31,11 +31,11 @@ class Search extends Component {
       this.props.onRequestGifs(this.props.searchField);
     }
   };
-  addSavedGif = data => {
-    let tempGifs = this.props.savedGifs;
-    tempGifs.push(data);
-    let unique = [...new Set(tempGifs)];
-    this.props.onSaveGifs(unique);
+  addSavedGif = newGif => {
+    // let tempGifs = this.props.savedGifs;
+    // tempGifs.push(data);
+    // let unique = [...new Set(tempGifs)];
+    this.props.onSaveGifs(newGif);
   };
 
   render() {
@@ -49,7 +49,7 @@ class Search extends Component {
             Search For Gifs in Below Box:
             <SearchBar searchChange={onSearchChange} />
           </div>
-          <div onClick={this.searchForGifs} className="search-btn">
+          <div onClick={this.searchForGifs} className="search-btn btn">
             Search
           </div>
           <div className="saved-num-bar">

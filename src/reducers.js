@@ -1,6 +1,8 @@
 import {
   SEARCHFIELD_ITEM,
-  SAVED_GIFS,
+  SAVE_GIF,
+  DELETE_GIF,
+  DELETE_ALL_GIF,
   REQUEST_GIFS_PENDING,
   REQUEST_GIFS_SUCCESS,
   REQUEST_GIFS_FAILED
@@ -22,10 +24,24 @@ export const searchGifs = (state = searchBoxState, action = {}) => {
 const savedGifsState = {
   savedGifs: []
 };
-export const saveGifs = (state = savedGifsState, action = {}) => {
+export const savedGifList = (state = savedGifsState, action = {}) => {
   switch (action.type) {
-    case SAVED_GIFS:
-      return Object.assign({}, state, { savedGifs: action.payload });
+    case SAVE_GIF:
+      const tempGifs = [...state.savedGifs, action.payload];
+      return Object.assign({}, state, {
+        savedGifs: [...new Set(tempGifs)]
+      });
+    case DELETE_GIF:
+      let filtered = state.savedGifs.filter(item => {
+        return item !== action.payload;
+      });
+      return Object.assign({}, state, {
+        savedGifs: filtered
+      });
+    case DELETE_ALL_GIF:
+      return Object.assign({}, state, {
+        savedGifs: []
+      });
     default:
       return state;
   }

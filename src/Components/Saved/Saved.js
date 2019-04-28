@@ -1,38 +1,36 @@
 import React, { Component } from "react";
 import GifList from "../GifList/GifList";
 import { connect } from "react-redux";
-import { saveGifs } from "../../actions";
+import { deleteGif, deleteAllGif, saveGif } from "../../actions";
 import "./Saved.css";
 
 const mapStateToProps = state => {
   return {
-    savedGifs: state.saveGifs.savedGifs
+    savedGifs: state.savedGifList.savedGifs
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSaveGifs: newSavedGifs => dispatch(saveGifs(newSavedGifs))
+    onSaveGifs: newSavedGifs => dispatch(saveGif(newSavedGifs)),
+    onDeleteGif: toRemove => dispatch(deleteGif(toRemove)),
+    onDeleteAllGif: () => dispatch(deleteAllGif())
   };
 };
 
 class Saved extends Component {
   deleteSavedItem = toRemove => {
-    let filtered = this.props.savedGifs.filter(item => {
-      return item !== toRemove;
-    });
-    this.props.onSaveGifs(filtered);
+    this.props.onDeleteGif(toRemove);
   };
   clearSaved = () => {
-    let empty = [];
-    this.props.onSaveGifs(empty);
+    this.props.onDeleteAllGif();
   };
   render() {
     const { savedGifs } = this.props;
     return (
-      <div className="save">
+      <div className="save blue">
         <div className="clear-save-bar">
-          <div onClick={this.clearSaved} className="clear-btn">
+          <div onClick={this.clearSaved} className="clear-btn btn">
             Clear All Saved
           </div>
           <div className="saved-num-bar">
