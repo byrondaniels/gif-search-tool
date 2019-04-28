@@ -24,7 +24,8 @@ class Saved extends Component {
     this.props.onSaveGifs(filtered);
   };
   clearSaved = () => {
-    this.props.onSaveGifs();
+    let empty = [];
+    this.props.onSaveGifs(empty);
   };
   render() {
     const { savedGifs } = this.props;
