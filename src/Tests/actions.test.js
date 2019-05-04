@@ -1,4 +1,4 @@
-import configureStore from "redux-mock-store";
+import configureStore from "./node_modules/redux-mock-store";
 
 import * as selectActions from "../actions";
 
