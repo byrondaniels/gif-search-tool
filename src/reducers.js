@@ -1,6 +1,6 @@
 import {
   SEARCHFIELD_ITEM,
-  SAVE_GIF,
+  SAVED_GIF,
   DELETE_GIF,
   DELETE_ALL_GIF,
   REQUEST_GIFS_PENDING,
@@ -26,7 +26,7 @@ const savedGifsState = {
 };
 export const savedGifList = (state = savedGifsState, action = {}) => {
   switch (action.type) {
-    case SAVE_GIF:
+    case SAVED_GIF:
       const tempGifs = [...state.savedGifs, action.payload];
       return Object.assign({}, state, {
         savedGifs: [...new Set(tempGifs)]

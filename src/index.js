@@ -7,8 +7,9 @@ import { createLogger } from "redux-logger";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { requestGifs, searchGifs, savedGifList } from "./reducers";
-
+import { searchGifs } from "./reducers/searchGifs";
+import { savedGifList } from "./reducers/savedGifList";
+import { requestGifs } from "./reducers/requestGifs";
 const logger = createLogger();
 const rootReducers = combineReducers({
   requestGifs,

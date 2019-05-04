@@ -1,5 +1,5 @@
 export const SEARCHFIELD_ITEM = "SEARCHFIELD_ITEM";
-export const SAVE_GIF = "SAVED_GIF";
+export const SAVED_GIF = "SAVED_GIF";
 export const DELETE_GIF = "DELETE_GIF";
 export const DELETE_ALL_GIF = "DELETE_ALL_GIF";
 export const REQUEST_GIFS_PENDING = "REQUEST_GIFS_PENDING";
